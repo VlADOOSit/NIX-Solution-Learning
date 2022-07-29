@@ -218,13 +218,13 @@ header .right_section #search {
 
 .main .left_section {
     background: #f1f2f4;
-    height: calc(100vh - 298px);
+    height: calc(100vh - 338px);
     overflow-y: auto;
 }
 
 .main .right_section {
     background: #f1f2f4;
-    height: calc(100vh - 298px);
+    height: calc(100vh - 338px);
     overflow-y: auto;
 }
 
@@ -244,6 +244,7 @@ header .right_section #search {
     margin-bottom: 5px;
     margin-left: 10%;
 }
+
 
 .list_item {
     padding-top: 10px;
@@ -346,3 +347,32 @@ header .right_section #search {
     background-color: #dfe2e9;
     cursor: pointer;
 }
+
+.bottom_screen_block_left {
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: space-around;
+    left: 0;
+    bottom: 0;
+    background-color: #f1f2f4;
+    width: calc(15% - 20px);
+    padding: 10px;
+    border-top: solid 2px #dadbe0;
+    border-right: solid 2px #dadbe0;
+}
+
+.bottom_screen_block_right {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    background-color: #f1f2f4;
+    width: calc(15% - 20px);
+    padding: 10px;
+    border-top: solid 2px #dadbe0;
+    border-left: solid 2px #dadbe0;
+}
+
