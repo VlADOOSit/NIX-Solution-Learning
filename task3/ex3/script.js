@@ -36,3 +36,5 @@ circledArray.add('Kherson');
 circledArray.printArr();
 
 console.log(circledArray.get(-1));
+console.log(circledArray.get(3));
+console.log(circledArray.get(9));
