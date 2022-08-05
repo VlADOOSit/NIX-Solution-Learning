@@ -1,4 +1,3 @@
-
 function circleArray() {
     this.arr = [];
 
@@ -29,12 +28,10 @@ function circleArray() {
 
 let circledArray = new circleArray();
 
-circledArray.add('asdasd');
-circledArray.add('12312');
-circledArray.add('fghfgh');
-circledArray.add('5435345');
-circledArray.add('ytutyu');
-
+circledArray.add('Kharkiv');
+circledArray.add('Kiyiv');
+circledArray.add('Kramatorsk');
+circledArray.add('Kherson');
 
 circledArray.printArr();
 
