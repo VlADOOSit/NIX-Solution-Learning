@@ -62,6 +62,7 @@
       padding: 6px;
     }
   </style>
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 	<script>
 	
 	/** ЗАДАНИЕ 1
@@ -71,6 +72,27 @@
 		- Результат должен быть следующим:
 			<span id="book">XML, AJAX, PHP, Java</span>
 	*/
+	$(function () {
+		let arrTeh = []
+		$('#books tbody tr').each(function(e) {
+			arrTeh.push($(this).children('td').eq(0).text());
+		});
+		arrTeh = arrTeh.filter(function(itm, i, a) {
+    		return i == a.indexOf(itm);
+		});
+		
+		arrTeh.forEach((element, i) => {
+			if (i != arrTeh.length - 1) {
+				$('#book').text($('#book').text() + element + ', ');
+			}
+			else {
+				$('#book').text($('#book').text() + ' ' + element);
+			}
+		});
+		
+	});
+
+	
 	</script>
 	
 </head>

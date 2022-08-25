@@ -77,7 +77,7 @@
 		$('#books tbody tr').each(function(e) {
 			let hrefStr = $(this).children('td').eq(0).text() + '.pdf';
 			$(this).children('td').eq(1).children('a').attr('href', hrefStr).text('купить');
-		})
+		});
 	});
 
 	
