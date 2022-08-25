@@ -58,11 +58,12 @@
 			2. Сделайте так, чтобы выпадающие элементы div не исчезали сразу.
 			3. Задание выполнить с помощью JS. Ршения с помощью CSS не использовать.
 		*/
-		
+		let arrIdOfTimeout = [];
 		/*
 		**	Функция показывает меню с указанным ID
 		*/
 		function showMenu(objID){
+			clearTimeout(arrIdOfTimeout[objID]);
 			var obj = document.getElementById(objID);
 			obj.style.visibility = "visible";
 		}
@@ -70,8 +71,10 @@
 		**	Функция убирает меню с указанным ID
 		*/
 		function hideMenu(objID){
-			var obj = document.getElementById(objID);
-			obj.style.visibility = "";
+			arrIdOfTimeout[objID] = setTimeout(function(){
+				var obj = document.getElementById(objID);
+				obj.style.visibility = "";
+			}, 100)
 		}		
 	</script>
 </head>
