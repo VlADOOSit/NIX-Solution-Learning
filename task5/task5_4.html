@@ -16,7 +16,7 @@
 				- ссылку на объект Document нового окна
 			4. Отрисуйте в новом окне закрывающие тэги "</html>" и "</body>"	
 		*/
-		
+
 		/*
 		 Создайте и опишите рекурсивную функцию showChildNodes(node, doc), 
 			которая отрисовывает дочерние узлы текущего узла.
@@ -28,6 +28,27 @@
 				1.2 Если это узел-элемент - выведите его название и ...
 					вызовите эту функцию для каждого из дочерних узлов	
 		*/
+
+		function showDOM() {
+			newWin = window.open();
+			newWin.document.write('<html><body>');
+			showChildNodes(document.body, newWin.document);
+			newWin.document.write('</body></html>')
+		}
+
+		function showChildNodes(node, doc) {
+			if (node.nodeType === 1) {
+				doc.write('<p>' + node.nodeName + '</p>');
+
+				for (let i = 0; i < node.childNodes.length; i++) {
+					showChildNodes(node.childNodes[i], doc);
+				}
+			}
+
+			else {
+				doc.write('<p>' + node.nodeValue + '</p>');
+			}
+		}
 		
 		
 	</script>
