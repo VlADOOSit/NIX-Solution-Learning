@@ -3,6 +3,7 @@
 <head>
 	<meta charset=utf-8>
 	<title>Практическая работа 4</title>
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 	<script>
 	/** ЗАДАНИЕ 1
 		- Привяжите событие "mouseenter" к элементу <div>, при котором 
@@ -16,10 +17,33 @@
 		- Привяжите событие "mouseleave" к элементу <div>, при котором 
 			- список <ul> ПЛАВНО показывается
 			- цвета	элемента <div> и третьего элемента списка возвращаются к первоначальному состоянию
-	*/	
+	*/
+	
+		$(function () {
+			$('div').mouseenter(function() {
+				$(this).css('background-color', 'yellow');
+				$(this).children('ul').children('li:eq(2)').css('background-color', 'red')
+			});
+
+			$('div').click(function() {
+				$(this).children('ul').slideUp({
+   					duration: 'slow',
+    				easing: 'linear'
+  				});
+			});
+
+			$('div').mouseleave(function() {
+				$(this).children('ul').slideDown({
+   					duration: 'slow',
+    				easing: 'linear'
+  				});
+				$(this).css('background-color', 'transparent');
+				$(this).children('ul').children('li:eq(2)').css('background-color', 'transparent')
+			});
+		});
+
 	</script>
 	<style> 
-		.mylist{}
 		.container{border: 1px solid green; height:100px}
 	</style>
 	</head>

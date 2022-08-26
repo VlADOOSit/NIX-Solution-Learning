@@ -68,10 +68,25 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 	<script>
 
-      $(function () {
+    	$(function () {
 
+			//1
+			$('#news .hidden').css('display', 'none');
 
-      });
+			$('#news p').css('cursor', 'pointer').on('click', function () {
+				$(this).children('.hidden').toggle();
+			});
+
+			//2
+			$('#books tr').hover(function() {
+				$(this).css('background-color', 'yellow');
+				$(this).children('td').eq(0).css('font-weight', 'bold');
+			}, function() {
+				$(this).css('background-color', 'transparent');
+				$(this).children('td').eq(0).css('font-weight', 'normal');
+			})
+ 
+    	});
 
 	/** ЗАДАНИЕ 1
 		- В <div id="news"> скрыть все элементы <span> с классом "hidden"
